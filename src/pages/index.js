@@ -1,8 +1,15 @@
+import Hero from '@/components/Hero'
+import Highlights from '@/components/Highlights'
+import Navbar from '@/components/Navbar'
 import React from 'react'
 
 function index() {
   return (
-    <div className='underline text-3xl font-bold'>Hello world!</div>
+    <main className='bg-black'>
+      <Navbar/>
+      <Hero/>
+      <Highlights/>
+    </main>
   )
 }
 
