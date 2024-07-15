@@ -6,7 +6,7 @@ import React from 'react'
 
 function index() {
   return (
-    <main className='bg-black'>
+    <main id='root' className='bg-black'>
       <Navbar/>
       <Hero/>
       <Highlights/>
