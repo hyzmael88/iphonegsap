@@ -7,6 +7,7 @@ import { Canvas } from '@react-three/fiber'
 import { View } from '@react-three/drei'
 import ModelView from './ModelView'
 import { models, sizes } from '@/constants'
+import { animateWithGsapTimeline } from '@/utils/animations'
 
 function Model() {
 
@@ -35,6 +36,23 @@ function Model() {
     // Esto asegura que document.getElementById se llama solo en el cliente
     setEventSource(document.getElementById("root"));
   }, []);
+
+  const tl = gsap.timeline()
+
+  useEffect(()=>{
+    if(size === 'large'){
+        animateWithGsapTimeline(tl, small, smallRotation, "#view1", "#view2", {
+            transform: 'translateX(-100%)',
+            duration: 2
+        })
+    }
+    if(size === 'small'){
+        animateWithGsapTimeline(tl, large, largeRotation, "#view2", "#view1", {
+            transform: 'translateX(0)',
+            duration: 2
+        })
+    }
+  },[size])
     
     useGSAP(()=>{
         gsap.to('#heading',{
