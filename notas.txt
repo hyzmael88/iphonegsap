@@ -1,0 +1,1 @@
+npm i three @react-three/drei @react-three/fiber
